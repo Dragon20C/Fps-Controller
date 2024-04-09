@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ejuc0180praj"]
+
+[ext_resource type="Texture2D" uid="uid://dybjgfp1tkov3" path="res://Source/Assets/Textures/HDR/Sky_texture.png" id="1_kk4ka"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0ptho"]
+panorama = ExtResource("1_kk4ka")
+
+[sub_resource type="Sky" id="Sky_05gtq"]
+sky_material = SubResource("PanoramaSkyMaterial_0ptho")
+
+[sub_resource type="Environment" id="Environment_on7na"]
+background_mode = 2
+sky = SubResource("Sky_05gtq")
+ambient_light_source = 3
+tonemap_mode = 3
+tonemap_exposure = 0.9
+tonemap_white = 0.9
+ssao_enabled = true
+ssao_detail = 0.8
+ssil_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_normalized = true
+fog_enabled = true
+fog_sky_affect = 0.15
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_saturation = 2.0
+
+[node name="Environment" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.708448, 0.549506, -0.442883, 0.128829, 0.516294, 0.846667, 0.693906, -0.656875, 0.294975, 0, 0, 0)
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.9
+shadow_blur = 1.2
+directional_shadow_split_1 = 0.03
+directional_shadow_split_2 = 0.1
+directional_shadow_split_3 = 0.48
+directional_shadow_max_distance = 300.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_on7na")

@@ -1,0 +1,10 @@
+Weapon manager
+------------
+
+1. Array for holding weapons
+2. Should handle switching weapons
+
+Weapon Container
+---------------
+1. Holds weapon data like ammo
+2. Holds the scene for the weapon
